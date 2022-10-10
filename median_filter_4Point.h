@@ -5,7 +5,7 @@
 
 extern cv::Point filter_result[4];
 
-void MedianFilter(cv::Point *input, int filterwindowsize);
+void MedianFilter_setof4Points(cv::Point *input, int filterwindowsize);
 
 void print_result(cv::Point *result);
 

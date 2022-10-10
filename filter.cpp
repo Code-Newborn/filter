@@ -23,7 +23,7 @@ void filter_Median(float input, int filterwindowsize)
 
         if (data_inwindow.size() % 2 == 0) // 滤波窗口大小为偶数
         {
-            for (int i = 1; i < (data_inwindow.size() / 2)-1; i++)
+            for (int i = 0; i < (data_inwindow.size() / 2) - 1; i++)
             {
                 data_iterator++;
             }
@@ -33,7 +33,7 @@ void filter_Median(float input, int filterwindowsize)
         }
         else // 滤波窗口大小为奇数
         {
-            for (int i = 1; i < (data_inwindow.size() + 1) / 2; i++)
+            for (int i = 0; i < (data_inwindow.size() + 1) / 2 - 1; i++)
             {
                 data_iterator++;
             }
@@ -47,7 +47,7 @@ void filter_Median(float input, int filterwindowsize)
     }
 }
 
-bool compare_Median(int a, int b)
+bool compare_Median(float a, float b)
 {
     return a < b;
 }

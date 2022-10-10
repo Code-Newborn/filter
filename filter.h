@@ -7,6 +7,6 @@ extern float filter_result_median;
 
 void filter_Median(float input, int filterwindowsize);
 
-bool compare_Median(int a, int b);
+bool compare_Median(float a, float b);
 
 #endif

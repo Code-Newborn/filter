@@ -3,7 +3,7 @@
 std::list<cv::Point *> set_ofPoints4;
 cv::Point filter_result[4];
 
-void MedianFilter(cv::Point *input, int filterwindowsize)
+void MedianFilter_setof4Points(cv::Point *input, int filterwindowsize)
 {
     set_ofPoints4.push_back(input);
     if (set_ofPoints4.size() > filterwindowsize)
@@ -50,7 +50,7 @@ void MedianFilter(cv::Point *input, int filterwindowsize)
         std::list<int>::iterator index_leftBottom_y = leftBottom_y.begin();
         if (set_ofPoints4.size() % 2 == 0) // 滤波窗口大小为偶数
         {
-            for (int i = 1; i < (set_ofPoints4.size() + 1) / 2; i++)
+            for (int i = 0; i < (set_ofPoints4.size() + 1) / 2 - 1; i++)
             {
                 index_leftTop_x++;
                 index_leftTop_y++;
@@ -89,7 +89,7 @@ void MedianFilter(cv::Point *input, int filterwindowsize)
         }
         else // 滤波窗口大小为奇数
         {
-            for (int i = 1; i < (set_ofPoints4.size() + 1) / 2; i++)
+            for (int i = 0; i < (set_ofPoints4.size() + 1) / 2 - 1; i++)
             {
                 index_leftTop_x++;
                 index_leftTop_y++;
